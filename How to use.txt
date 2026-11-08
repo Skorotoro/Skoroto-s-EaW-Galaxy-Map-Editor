@@ -1,0 +1,135 @@
+GALAXY MAP EDITOR for Star Wars: Empire at War
+==============================================
+
+Edit the galactic conquest maps of Empire at War, Forces of Corruption and their mods (Thrawn's
+Revenge, Awakening of the Rebellion and others), make new maps, and export them as a mod you can
+upload to the Steam Workshop.
+
+
+WHAT YOU NEED
+-------------
+- Windows 10 or 11 (64-bit).
+- Star Wars: Empire at War - Gold Pack from Steam. The mods you want to edit, subscribed on the Steam
+  Workshop or placed in the game's Mods folder.
+- Nothing else: no installer, no Python or other programs. Unzip the "Galaxy Map Editor" folder
+  anywhere (the Desktop is fine) and double click GalaxyMapEditor.exe inside it. Keep the exe and the
+  _internal folder together: the exe needs the files in _internal. The folder can be moved or
+  deleted at any time; your maps stay in your Documents folder.
+
+Only one copy runs at a time: opening it again brings the open one to the front.
+
+Windows may warn about an unknown program the first time ("Windows protected your PC"): click
+"More info", then "Run anyway". Some antivirus programs are cautious about new programs too.
+
+The editor finds the game through Steam on its own. If the game is installed somewhere it can't find,
+it asks for the game's folder (the one holding GameData and corruption). It goes online only to look
+up the names of Workshop mods that don't name themselves.
+
+Your maps are kept in Documents\Galaxy Map Editor\Projects; settings and a log of any error in
+Documents\Galaxy Map Editor.
+
+
+CHOOSING WHAT TO EDIT
+---------------------
+At start the editor lists what it finds: Empire at War, Forces of Corruption, and every mod installed.
+Click one to edit its maps. Submods installed for a mod are read with it (their worlds and maps
+show up in the editor). If the game isn't found, choose its folder (the one holding GameData and
+corruption). "Other Mods" (below the map) goes back to this list.
+
+The editor shows each map as the game's files define it. Some of the base game's maps list only a few
+hyperlanes between their worlds (Equal Footing has 15 for 56 worlds); that is how the game made them.
+
+
+CHOOSING A MAP
+--------------
+The map button (top left) opens the map list by type (for Thrawn's Revenge: Progressive, Regional,
+Historical and Custom): point at a type, then click a map to open it. At the bottom of each list, "New ... map..." makes a
+new map from one of them, or an empty one.
+
+Right click a map for:
+  Copy from map...   this map's worlds, lanes and owners become another map's.
+  Reset to Default   undoes every change to the map.
+  Delete             deletes a map you made.
+
+
+START DATES (mods with dated starts, like Thrawn's Revenge)
+-----------
+The start date button opens the list of every date the mod knows:
+  - Tick a date to offer it in the game. A date the mod has no content for yet is marked; ticking it
+    warns you (a campaign there may lack factions or heroes, or fail to start).
+  - Click a date to see it. Worlds, lanes and owners belong to the date you are viewing.
+  - Right click a date: "Copy from date" copies its worlds, lanes and owners into the date you view.
+Historical maps have one fixed date; a new historical map gets the date you give it.
+
+
+TOOLS
+-----
+  Select           Click a world to see it in the panel on the right.
+  Lanes            Click one world, then another: adds the hyperlane, or removes it if there is one.
+                   Click the first world again to let go of it.
+  Paint owner      Choose a faction, then click worlds to give them to it.
+  Create new planet  (right of the faction box) Click an empty spot to make a new world there. It is put on the date you are
+                   viewing; "Add to map" puts it on others.
+  Move worlds      (off by default) lets you drag worlds. A world's position is shared by every map,
+                   so it moves on all of them. "Restore default positions" puts them all back.
+
+Mouse wheel: zoom. Right or middle button: drag the view. Ctrl+Z: undo. Ctrl+S: save.
+
+  Find incomplete planets  jumps to each world missing a battle map or galaxy map model.
+  Menu buttons...          (Thrawn's-style menus) every map button of the game's menu. Drag a map onto
+                           another button to move it there (a map already there swaps with it), or
+                           double click it to choose a button. Moving one of the mod's own maps asks
+                           first: everyone who installs your maps gets the move.
+  Excluded Worlds          shows the worlds not on this map (purple: from a submod; orange: imported), to
+                           add them.
+  Import Excluded planets from mod...  brings the worlds of another installed game or mod (that this one
+                           lacks) into Excluded Worlds. Adding one copies its battle maps, model and picture
+                           into your map. You are asked to confirm: make sure you have permission to publish
+                           another mod's files before you upload.
+  Proteus spawns           (mods with Proteus warlords) rings each warlord's worlds at the date you
+                           view: gold = taken if that warlord is chosen (crown: its capital and heroes);
+                           grey dashed = its world, held by another power.
+
+
+THE WORLD PANEL
+---------------
+  - Name, owner (at the date you view), position.
+  - Remove from map / Add to map. Delete planet removes the world and everything changed about it from
+    this map (a world you created is deleted with its files).
+  - Land and space build slots, and the space station level (the highest station the world can have;
+    a world that starts with an owner starts with its station at this level).
+  - Planet picture: the picture the game shows in the planet view. "Change picture..." takes any
+    picture. Worlds sharing a battle map share its picture.
+  - Land battles, land and space battle maps, galaxy map model: type a name the game has, pick from
+    the list, or "Browse..." for your own file. "Open folder" opens the folder the file is in.
+  - Planet texts. Press "Keep text changes" after editing.
+
+
+NEW PLANETS
+-----------
+"Create new planet" makes a blank world with a red X. It needs a space battle map (and a land battle
+map if it has land battles) and a galaxy map model. Its map names are filled in already: put your map
+files with those names in its folder ("Open folder") and the X goes away, or pick the game's own.
+Exporting a map with incomplete planets can make the game crash or show errors; you are warned first.
+
+
+SAVING AND PLAYING
+------------------
+Save keeps your changes and installs every map you made for that game or mod into the game's Mods
+folder (Mods\GalaxyMaps_<name>). The status line shows the launch options to play them; set them in
+Steam (game Properties > Launch options), start the game, and start a NEW campaign.
+
+
+EXPORT AS MOD
+-------------
+"Export as mod..." writes one map as a complete mod folder with a modinfo.json naming the mods it
+needs. Upload that folder to the Steam Workshop as it is, and list the same mods as required items.
+
+Maps made with this editor work together: install several and each keeps its menu button. Planet
+texts, new planet names, and changed positions, pictures or battle maps of the mod's own worlds are
+kept in files only one mod can replace: with two such mods, one mod's versions win.
+
+Map size: the largest maps known to run well in the unmodified game have about 200 worlds. The editor
+warns above that: bigger maps may load slowly, run slowly or crash.
+
+When the mod you edited updates, open your map, Save, and export it again.
